@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="fileExample" format="json">
+      <types:shape format="weave" example="file.json"><![CDATA[%dw 2.0
+
+type fileExample = {|
+  fileName: String, 
+  custumer: {|
+    custumerId: String, 
+    custumerName: String
+  |}
+|} {"example": "{\\\"fileName\\\":\\\"file1\\\",\\\"custumer\\\":{\\\"custumerId\\\":\\\"3\\\",\\\"custumerName\\\":\\\"Leonardo\\\"}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#e0ed1cf9-849d-4d77-894d-2dee547999df">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#600600a1-fccb-45da-b3d6-fc4ef121d39d">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a9914c01-bef9-4818-92c9-822f675f22b8">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#9f587925-29c0-43e4-ac18-f519a149a15e">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="fileExample"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
